@@ -1,4 +1,5 @@
-import { Entity } from './entity'
+import { Entity } from './objective/entity'
+import { PerceptionEntity } from './perceptionEntity'
 
 export class Subject {
   entityId: number
@@ -8,10 +9,10 @@ export class Subject {
     this.entityId = entityId
   }
 
-  perception(objectiveEntities: Entity[]) {
+  perception(entities: PerceptionEntity[]) {
     this.vision = {
       ...this.vision,
-      enitiesCount: objectiveEntities.length
+      enitiesCount: entities.length
     }
   }
 }

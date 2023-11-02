@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@esbuild/linux-x64@0.18.20":
-  version "0.18.20"
-  resolved "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.18.20.tgz"
-  integrity sha512-UYqiqemphJcNsFEskc73jQ7B9jgwjWrSayxawS6UVFZGWrAAtkzjxSqnoclCXxWtfwLdzU+vTpcNYhpn43uP1w==
-
 "@types/ramda@^0.29.7":
   version "0.29.7"
   resolved "https://registry.npmjs.org/@types/ramda/-/ramda-0.29.7.tgz"

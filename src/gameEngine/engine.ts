@@ -1,7 +1,8 @@
 import { clone } from 'ramda'
-import { Entity } from './entity'
-import { Objective } from './objective'
-import { Subject } from './subject'
+import { Entity } from './objective/entity'
+import { Objective } from './objective/objective'
+import { Subject } from './subject/subject'
+import { PerceptionEntity } from './subject/perceptionEntity'
 
 export class Engine {
   objective: Objective
@@ -12,8 +13,9 @@ export class Engine {
   }
 
   moment() {
+    const perceptEntities = this.objective.entities.map((value) => new PerceptionEntity(value))
     this.subjects.forEach((value) => {
-      value.perception(clone(this.objective.entities))
+    value.perception(perceptEntities)
     })
     this.objective.doEffect()
 
@@ -27,5 +29,6 @@ export class Engine {
   attachSubject(entity: Entity) {
     const subject = new Subject(entity.id)
     this.subjects.push(subject)
+    return subject
   }
 }
